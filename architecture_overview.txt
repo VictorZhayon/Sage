@@ -1,0 +1,13 @@
+User Upload (PDF/TXT/DOCX) 
+    ↓
+Document Processing & Chunking
+    ↓
+Text Embedding (all-MiniLM-L6-v2)
+    ↓
+Vector Database Storage (ChromaDB)
+    ↓
+User Query → Similarity Search → Context Retrieval
+    ↓
+Gemini 1.5 Flash (via Google AI Studio API)
+    ↓
+Generated Answer + Source References
