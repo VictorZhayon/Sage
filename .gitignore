@@ -1,3 +1,4 @@
 sageai/
 .env
 .gitignore
+__pycache__/
