@@ -39,10 +39,3 @@ Answer:"""
         except Exception as e:
             return f"Error generating response: {str(e)}"
     
-    def test_connection(self) -> bool:
-        """Test if the API key is valid"""
-        try:
-            self.model.generate_content("Hello")
-            return True
-        except:
-            return False
