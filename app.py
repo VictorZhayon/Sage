@@ -143,7 +143,7 @@ def main():
             with st.spinner("The Sage ponders your query..."):
                 try:
                     # Search for relevant documents
-                    relevant_docs = vector_store.search(user_query, top_k)
+                    relevant_docs = vector_store.search(user_query, config.TOP_K_RESULTS)
                     
                     if not relevant_docs:
                         st.warning("The Sage finds no wisdom for your query.")
