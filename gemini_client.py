@@ -18,20 +18,21 @@ class GeminiClient:
         # Create prompt
         prompt = f"""You are Sage AI, a helpful AI assistant. Answer the user's question based on the provided context documents.
 
-Context Documents:
-{context}
+            Context Documents:
+            {context}
 
-Question: {query}
+            Question: {query}
 
-Instructions:
-1. Answer the question based on the provided context
-2. If the context doesn't contain enough information, say so
-3. Cite the source documents when relevant
-4. Be concise but thorough
-5. If the user asks for a summary, provide a brief overview of the main points
-6. If the question is not a question, respond appropriately
+            Instructions:
+            1. Answer the question based on the provided context
+            2. If the context doesn't contain enough information, say so
+            3. Cite the source documents when relevant
+            4. Be concise but thorough
+            5. If the user asks for a summary, provide a brief overview of the main points
+            6. If the question is not a question, respond appropriately
 
-Answer:"""
+            Answer:    
+        """
         
         try:
             response = self.model.generate_content(prompt)
