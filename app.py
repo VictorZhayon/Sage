@@ -131,7 +131,7 @@ def main():
             st.info("The tome is empty. Present manuscripts before seeking wisdom.")
             return
         
-        top_k = st.slider("How many passages shall the Sage consult?", 1, config.TOP_K_RESULTS)
+        # top_k = st.slider("How many passages shall the Sage consult?", 1, config.TOP_K_RESULTS)
         
         # Query input
         user_query = st.text_area("What knowledge dost thou seek from the manuscripts?", height=100)
