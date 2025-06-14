@@ -54,10 +54,10 @@ def main():
         st.metric("Manuscripts", stats["unique_files"])
         st.metric("Passages", stats["total_chunks"])
         
-        if stats["files"]:
-            st.write("Manuscripts in the tome:")
-            for file in stats["files"]:
-                st.write(f"• {file}")
+        # if stats["files"]:
+        #     st.write("Manuscripts in the tome:")
+        #     for file in stats["files"]:
+        #         st.write(f"• {file}")
         
         # Reset button
         if st.button("🗑️ Purge Tome of Knowledge", type="secondary"):
