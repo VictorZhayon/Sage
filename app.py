@@ -115,6 +115,7 @@ def main():
                         os.unlink(tmp_path)
                         
                         st.success(f"✅ {uploaded_file.name} has been inscribed into the tome! ({len(chunks)} passages)")
+                        st.rerun()  # Immediately refresh to update sidebar
                         
                     except Exception as e:
                         st.error(f"Alas, an error befell {uploaded_file.name}: {str(e)}")
@@ -130,7 +131,7 @@ def main():
             st.info("The tome is empty. Present manuscripts before seeking wisdom.")
             return
         
-        top_k = st.slider("How many passages shall the Sage consult?", 1, 10, config.TOP_K_RESULTS)
+        top_k = st.slider("How many passages shall the Sage consult?", 1, config.TOP_K_RESULTS)
         
         # Query input
         user_query = st.text_area("What knowledge dost thou seek from the manuscripts?", height=100)
@@ -157,10 +158,10 @@ def main():
                     st.write(answer)
                     
                     # Show sources
-                    st.subheader("Sources Consulted")
-                    for i, doc in enumerate(relevant_docs):
-                        with st.expander(f"Source {i+1}: {doc['metadata']['filename']} (Similarity: {1-doc['distance']:.3f})"):
-                            st.write(doc['text'])
+                    # st.subheader("Sources Consulted")
+                    # for i, doc in enumerate(relevant_docs):
+                    #     with st.expander(f"Source {i+1}: {doc['metadata']['filename']} (Similarity: {1-doc['distance']:.3f})"):
+                    #         st.write(doc['text'])
                 
                 except Exception as e:
                     st.error(f"An error has clouded the Sage's vision: {str(e)}")
